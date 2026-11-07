@@ -2,242 +2,240 @@
 <html lang="en" data-api="https://script.google.com/macros/s/AKfycbyrz2iSNbGoUWkCa0-xNuhGQD365SfZ_T6ygPC-9dMTXEysnAxX1YKDWMKS3XPsf0I2/exec">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#2a2620">
 <title>SBL Vendors</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&family=Changa:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f1ece3;--cell:#fffdf9;--line:rgba(60,45,20,.10);--field:#f3eee5;--ink:#8a6a1f;--text:#141414;--muted:#6e6e73;
-  --gold:#c9a24a;--gold2:#e8cd8c;--gold3:#b08a2e;--danger:#d64545;--ok:#2f8f5b;--r:18px}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-body{min-height:100vh;background:radial-gradient(900px 500px at 15% -10%,rgba(201,162,74,.22),transparent 60%),linear-gradient(180deg,#ece5d9 0%,var(--bg) 40%,#f5f1ea 100%)}
-html[lang=ar] body{font-family:Changa,Inter,system-ui,sans-serif}
-.wrap{max-width:640px;margin:0 auto;padding:18px 16px 110px}
-button{font:inherit;cursor:pointer}
-.top{display:flex;justify-content:space-between;align-items:center;margin:0 2px 12px}
-.lang{display:flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px}
-.lang button{border:0;background:transparent;color:var(--muted);font-weight:600;font-size:13px;padding:6px 14px;border-radius:999px}
-.lang button.sel{background:linear-gradient(160deg,var(--gold2),var(--gold3));color:#111}
-.iconbtn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 12px;font-size:13px;color:var(--ink);font-weight:600}
-.head{background:radial-gradient(520px 260px at 0 0,rgba(201,162,74,.30),transparent 65%),linear-gradient(160deg,#3a342c,#2a2620 55%,#221f1a);
-  border-radius:24px;padding:18px;color:#fff;border:1px solid rgba(201,162,74,.18);box-shadow:0 14px 36px rgba(60,45,20,.18);margin-bottom:16px}
-.head .k{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2)}
-html[lang=ar] .head .k{letter-spacing:0}
-.head h1{font-family:"Playfair Display",Georgia,serif;font-size:34px;margin:4px 0 2px;background:linear-gradient(180deg,var(--gold2),var(--gold3));-webkit-background-clip:text;background-clip:text;color:transparent}
-html[lang=ar] .head h1{font-family:Changa,serif}
-.head .s{color:#bdb6a8;font-size:13px}
-.search{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:0 12px;margin-top:14px}
-.search input{flex:1;border:0;outline:0;background:transparent;color:#fff;font:inherit;font-size:16px;padding:12px 0}
-.search input::placeholder{color:#a8a092}
-.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 10px;scrollbar-width:none}
-.chips::-webkit-scrollbar{display:none}
-.chip{flex:none;border:1px solid var(--line);background:#fff;color:var(--text);font-size:13.5px;padding:8px 14px;border-radius:999px;white-space:nowrap}
-.chip.sel{border-color:var(--gold);background:linear-gradient(160deg,var(--gold2),var(--gold3));color:#111}
-.flabel{font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:6px 6px 6px}
-html[lang=ar] .flabel{letter-spacing:0}
-.count{font-size:13px;color:var(--muted);margin:6px 6px 10px}
-.card{background:var(--cell);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin-bottom:10px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.04);cursor:pointer;transition:transform .12s}
-.card:active{transform:scale(.985)}
-.card .row1{display:flex;align-items:center;gap:12px}
-.av{width:44px;height:44px;border-radius:13px;flex:none;display:grid;place-items:center;font-weight:700;color:#111;background:linear-gradient(160deg,var(--gold2),var(--gold3))}
-.card .n{font-weight:650;font-size:16px;line-height:1.25}
-.card .m{font-size:13px;color:var(--muted);margin-top:2px}
-.card .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.tag{font-size:11.5px;padding:4px 9px;border-radius:999px;background:var(--field);color:#4b4337}
-.st{font-size:11.5px;font-weight:600;padding:4px 9px;border-radius:999px;margin-inline-start:auto;flex:none}
-.st.worked{background:#e3f3ea;color:var(--ok)}.st.contacted{background:#fbf1d9;color:#8a6a1f}.st.new{background:#e8eefc;color:#3557b5}.st.no{background:#fbe4e4;color:var(--danger)}
-.stars{color:var(--gold3);font-size:13px;letter-spacing:1px}
-.empty{text-align:center;color:var(--muted);padding:40px 10px}
-.fab{position:fixed;bottom:22px;inset-inline-end:max(16px,calc(50% - 304px));border:0;border-radius:999px;padding:15px 22px;font-weight:700;font-size:16px;color:#111;
-  background:linear-gradient(160deg,var(--gold2),var(--gold3));box-shadow:0 10px 28px rgba(176,138,46,.4)}
-/* sheets */
-.sheet{position:fixed;inset:0;background:rgba(20,18,15,.35);display:none;z-index:20;backdrop-filter:blur(2px)}
-.sheet.on{display:block}
-.panel{position:absolute;inset-inline:0;bottom:0;max-height:92vh;overflow:auto;background:var(--bg);border-radius:24px 24px 0 0;padding:10px 16px 30px;
-  animation:up .35s cubic-bezier(.2,.8,.2,1);max-width:640px;margin:0 auto}
-@keyframes up{from{transform:translateY(40px);opacity:.4}to{transform:none;opacity:1}}
-.grab{width:40px;height:5px;border-radius:5px;background:#cfc7b8;margin:4px auto 10px}
-.ptop{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-.ptop h2{font-size:20px;margin:0}
-.link{border:0;background:transparent;color:var(--ink);font-weight:600;font-size:15px;padding:6px}
-.group{background:var(--cell);border-radius:var(--r);border:1px solid var(--line);overflow:hidden;margin-bottom:16px}
-.row{display:flex;align-items:center;gap:12px;padding:0 16px;min-height:50px;position:relative}
-.row+.row::before{content:"";position:absolute;top:0;inset-inline-start:16px;inset-inline-end:0;height:1px;background:var(--line)}
-.row label,.row .lb{width:110px;flex:none;font-size:14px;color:var(--muted)}
-.row input,.row textarea{flex:1;min-width:0;border:0;outline:0;background:transparent;font:inherit;font-size:16px;color:var(--text);padding:13px 0}
-.row textarea{resize:vertical;min-height:80px}
-.row .v{flex:1;padding:13px 0;font-size:15.5px;word-break:break-word}
-.q{padding:12px 16px}.q+.q{border-top:1px solid var(--line)}
-.q .ql{font-size:13px;color:var(--muted);margin-bottom:9px}
-.q .chips{flex-wrap:wrap;overflow:visible;padding:0}
-.seg{display:flex;background:var(--field);border-radius:11px;padding:3px}
-.seg button{flex:1;border:0;background:transparent;color:var(--muted);font-size:13px;padding:8px 4px;border-radius:9px}
-#g_type{flex-wrap:wrap;gap:2px}#g_type button{flex:1 0 30%}
-.seg button.sel{background:linear-gradient(160deg,var(--gold2),var(--gold3));color:#111;font-weight:600}
-.rate button{border:0;background:transparent;font-size:26px;color:#d9cfbd;padding:0 2px}
-.rate button.on{color:var(--gold3)}
-.acts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
-.act{border:1px solid var(--line);background:var(--cell);border-radius:16px;padding:12px 4px;text-align:center;font-size:12.5px;color:var(--text);text-decoration:none}
-.act .ic{width:36px;height:36px;border-radius:11px;margin:0 auto 6px;display:grid;place-items:center;background:linear-gradient(160deg,var(--gold2),var(--gold3));color:#111}
-.act.off{opacity:.35;pointer-events:none}
-.btn{width:100%;border:0;border-radius:16px;font-weight:700;font-size:16px;padding:15px;margin-top:4px}
-.btn.p{background:linear-gradient(160deg,var(--gold2),var(--gold3));color:#111;box-shadow:0 8px 24px rgba(201,162,74,.28)}
-.btn.d{background:transparent;color:var(--danger);border:1px solid rgba(214,69,69,.3);margin-top:10px}
-.msg{color:var(--danger);font-size:13px;margin:0 6px 10px;min-height:0}
-.lock{max-width:420px;margin:12vh auto 0;text-align:center}
-.lock .group{padding:4px 0;text-align:start}
-.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#2a2620;color:#fff;padding:10px 16px;border-radius:12px;font-size:14px;display:none;z-index:30}
-.spin{display:inline-block;width:16px;height:16px;border:2px solid rgba(0,0,0,.2);border-top-color:#111;border-radius:50%;animation:sp .7s linear infinite;vertical-align:-3px}
-@keyframes sp{to{transform:rotate(360deg)}}
-.files a{display:block;color:var(--ink);text-decoration:none;padding:4px 0}
+:root{--bg:#f3f3f3;--grid:#d4d4d4;--head:#ececec;--headtx:#333;--tx:#1f1f1f;--muted:#6b6b6b;--sel:#1a73e8;--band:#2b2b2e;--gold:#c9a24a;--white:#fff;
+  --worked:#e6f4ea;--workedtx:#137333;--contacted:#fef7e0;--contactedtx:#a56300;--new:#e8f0fe;--newtx:#1967d2;--no:#fce8e6;--notx:#c5221f}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--tx);font:13px/1.35 "Segoe UI",Tahoma,Arial,sans-serif;display:flex;flex-direction:column}
+button,input,select{font:inherit}
+.bar{background:var(--band);color:#fff;display:flex;align-items:center;gap:10px;padding:8px 12px;flex-wrap:wrap}
+.bar .t{font-weight:700;letter-spacing:.3px;margin-inline-end:6px}
+.bar .t span{color:var(--gold)}
+.bar input,.bar select{height:30px;border:1px solid #555;border-radius:4px;background:#fff;color:#111;padding:0 8px}
+.bar input[type=search]{width:220px}
+.btn{height:30px;border:1px solid #555;border-radius:4px;background:#3a3a3e;color:#fff;padding:0 10px;cursor:pointer;white-space:nowrap}
+.btn:hover{background:#4a4a50}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:#111;font-weight:600}
+.sp{flex:1}
+.info{display:flex;gap:14px;align-items:center;padding:5px 12px;background:#fff;border-bottom:1px solid var(--grid);color:var(--muted);font-size:12px}
+.info b{color:var(--tx)}
+#status{margin-inline-start:auto}
+.wrap{flex:1;overflow:auto;background:#fff}
+table{border-collapse:separate;border-spacing:0;table-layout:fixed;min-width:100%}
+th,td{border-inline-end:1px solid var(--grid);border-bottom:1px solid var(--grid);padding:0;height:26px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;vertical-align:middle}
+th{position:sticky;top:0;z-index:2;background:var(--head);color:var(--headtx);font-weight:600;text-align:start;padding:0 6px;cursor:pointer;user-select:none}
+th .ar{color:var(--muted);font-size:10px;margin-inline-start:3px}
+td{padding:0 6px}
+td.rn,th.rn{position:sticky;inset-inline-start:0;z-index:1;background:var(--head);color:var(--muted);text-align:center;width:44px;cursor:default}
+th.rn{z-index:3}
+td.nm,th.nm{position:sticky;inset-inline-start:44px;z-index:1;background:#fff;font-weight:600}
+th.nm{z-index:3;background:var(--head)}
+tr:hover td{background:#f6f9fe}
+tr:hover td.rn{background:#e3e3e3}
+td.ed{cursor:cell}
+td.focus{outline:2px solid var(--sel);outline-offset:-2px}
+td input,td select{width:100%;height:24px;border:0;outline:0;padding:0 2px;background:#fff;font:inherit}
+td.st{text-align:center;font-weight:600;font-size:12px}
+td.st.worked{background:var(--worked);color:var(--workedtx)}
+td.st.contacted{background:var(--contacted);color:var(--contactedtx)}
+td.st.new{background:var(--new);color:var(--newtx)}
+td.st.no{background:var(--no);color:var(--notx)}
+td.act{text-align:center;padding:0}
+td.act a,td.act button{border:0;background:none;cursor:pointer;color:var(--muted);font-size:14px;padding:0 3px;text-decoration:none}
+td.act a:hover,td.act button:hover{color:var(--sel)}
+td a.ln{color:var(--sel);text-decoration:none}
+tr.saving td{opacity:.55}
+tr.newrow td{background:#fffbe6}
+.empty{padding:40px;text-align:center;color:var(--muted)}
+.lock{max-width:340px;margin:12vh auto;background:#fff;border:1px solid var(--grid);border-radius:6px;padding:22px}
+.lock h1{margin:0 0 4px;font-size:18px}.lock p{margin:0 0 14px;color:var(--muted)}
+.lock input{width:100%;height:34px;border:1px solid var(--grid);border-radius:4px;padding:0 10px;margin-bottom:10px}
+.lock .btn{width:100%;height:34px}
+.lock .msg{color:var(--notx);min-height:18px;margin-bottom:6px}
+.langsw{display:flex;gap:4px}
+.langsw button{height:26px;border:1px solid #555;background:transparent;color:#ccc;border-radius:4px;padding:0 8px;cursor:pointer}
+.langsw button.sel{background:#fff;color:#111}
+.lockwrap .langsw button{border-color:var(--grid);color:#555}
+html[dir=rtl] body{font-family:Tahoma,"Segoe UI",Arial,sans-serif}
+@media (max-width:700px){.bar input[type=search]{width:100%;order:9}}
 </style>
 </head>
 <body>
-<div class="wrap" id="app"></div>
-<div class="sheet" id="sheet"><div class="panel" id="panel"></div></div>
-<div class="toast" id="toast"></div>
+<div id="app"></div>
+<input type="file" id="fileIn" hidden>
 <script>
-/* ===== config ===== */
-const API = document.documentElement.dataset.api || '';            // Apps Script /exec (set at build)
-const DEMO = !API;                                                    // local preview: sample data in this browser only
-const TYPES = ['Subcontractor','Material supplier','Equipment rental','Manpower supply','Services','Other'];
-const SPECS = ['Fiber optics','Telecom','LV/MV electrical','Solar PV','Civil','ELV','Excavation','MEP','Steel','Transport'];
-const CITIES = ['Riyadh','Jeddah','Dammam','Khobar','Makkah','Madinah','Qassim','Tabuk','Abha','Hail','Jazan','All KSA'];
-const STATUS = [['worked','Worked with'],['contacted','Contacted'],['new','New'],['no','Not recommended']];
-const AR = {"Vendors":"الموردون","SBL directory":"دليل SBL","Smart Building Lines":"خطوط البناء الذكي","Search name, person, phone…":"ابحث بالاسم أو الشخص أو الجوال…",
- "Type":"النوع","Specialty":"التخصص","City":"المدينة","Status":"الحالة","All":"الكل","vendors":"مورد","Add vendor":"إضافة مورد","New vendor":"مورد جديد","Edit vendor":"تعديل المورد",
- "Cancel":"إلغاء","Save":"حفظ","Edit":"تعديل","Close":"إغلاق","Company":"الشركة","Contact person":"المسؤول","Mobile":"الجوال","Email":"الإيميل","Website":"الموقع",
- "CR no.":"السجل التجاري","VAT no.":"الرقم الضريبي","Source":"المصدر","Last contact":"آخر تواصل","Notes":"ملاحظات","Rating":"التقييم","Cities":"المدن",
- "Specialties":"التخصصات","Call":"اتصال","WhatsApp":"واتساب","Folder":"المجلد","Documents":"المستندات","Upload document":"رفع مستند","Archive vendor":"أرشفة المورد",
+const API = document.documentElement.dataset.api || '';
+const DEMO = !API;
+const TYPES=['Subcontractor','Material supplier','Equipment rental','Manpower supply','Services','Other'];
+const STATUS=[['worked','Worked with'],['contacted','Contacted'],['new','New'],['no','Not recommended']];
+const COLS=[ // key, label, width, kind
+ ['name','Company',260,'text'],['type','Type',140,'type'],['specialties','Specialties',170,'text'],['cities','City',110,'text'],
+ ['contact','Contact person',140,'text'],['phone','Mobile',120,'text'],['email','Email',200,'text'],['status','Status',120,'status'],
+ ['rating','Rating',70,'rating'],['cr','CR no.',110,'text'],['vat','VAT no.',140,'text'],['lastContact','Last contact',110,'date'],
+ ['source','Source',230,'text'],['notes','Notes',300,'text']];
+const AR={"Vendors":"الموردون","Company":"الشركة","Type":"النوع","Specialties":"التخصصات","City":"المدينة","Contact person":"المسؤول","Mobile":"الجوال","Email":"الإيميل",
+ "Status":"الحالة","Rating":"التقييم","CR no.":"السجل التجاري","VAT no.":"الرقم الضريبي","Last contact":"آخر تواصل","Source":"المصدر","Notes":"ملاحظات",
  "Subcontractor":"مقاول باطن","Material supplier":"مورد مواد","Equipment rental":"تأجير معدات","Manpower supply":"توريد عمالة","Services":"خدمات","Other":"أخرى",
- "Fiber optics":"ألياف ضوئية","Telecom":"اتصالات","LV/MV electrical":"كهرباء منخفض/متوسط","Solar PV":"طاقة شمسية","Civil":"مدني","ELV":"تيار خفيف","Excavation":"حفريات","MEP":"ميكانيكا وكهرباء","Steel":"حديد","Transport":"نقل",
- "Riyadh":"الرياض","Jeddah":"جدة","Dammam":"الدمام","Khobar":"الخبر","Makkah":"مكة","Madinah":"المدينة","Qassim":"القصيم","Tabuk":"تبوك","Abha":"أبها","Hail":"حائل","Jazan":"جازان","All KSA":"كل المملكة",
- "Worked with":"تعاملنا معه","Contacted":"تواصلنا","New":"جديد","Not recommended":"لا ننصح به",
- "Access code":"رمز الدخول","Enter your access code":"أدخل رمز الدخول","Open":"فتح","Lock":"قفل","Wrong code":"رمز غير صحيح","Saved":"تم الحفظ","Archived":"تمت الأرشفة",
- "No vendors yet. Tap “Add vendor”.":"لا يوجد موردون بعد. اضغط «إضافة مورد».","No matches.":"لا نتائج.","Company name is required.":"اسم الشركة مطلوب.",
- "Could not reach the server.":"تعذّر الاتصال بالخادم.","Preview mode: sample data, saved in this browser only.":"وضع المعاينة: بيانات تجريبية محفوظة في هذا المتصفح فقط.",
- "Uploading…":"جارٍ الرفع…","Saving…":"جارٍ الحفظ…","e.g. exhibition, LinkedIn, referral":"مثلاً: معرض، LinkedIn، توصية","Archive this vendor?":"أرشفة هذا المورد؟"};
+ "Worked with":"تعاملنا معه","Contacted":"تواصلنا","New":"جديد","Not recommended":"لا ننصح به","All types":"كل الأنواع","All statuses":"كل الحالات",
+ "Search…":"بحث…","+ Add row":"+ إضافة صف","Export to Excel":"تصدير إلى Excel","Lock":"قفل","rows":"صف","Saving…":"جارٍ الحفظ…","Saved":"تم الحفظ",
+ "Could not save":"تعذّر الحفظ","Uploading…":"جارٍ الرفع…","Uploaded":"تم الرفع","Archive this row?":"أرشفة هذا الصف؟","Archived":"تمت الأرشفة",
+ "Access code":"رمز الدخول","Open":"فتح","Wrong code":"رمز غير صحيح","Enter the access code":"أدخل رمز الدخول","Could not reach the server.":"تعذّر الاتصال بالخادم.",
+ "No rows.":"لا توجد صفوف.","Double-click a cell to edit. Enter saves, Esc cancels.":"انقر مرتين على الخانة للتعديل. Enter للحفظ و Esc للإلغاء.",
+ "Upload document":"رفع مستند","Open folder":"فتح المجلد","Archive":"أرشفة","Company name is required.":"اسم الشركة مطلوب.","Loading…":"جارٍ التحميل…"};
 let LANG='en'; const T=s=>LANG==='ar'&&AR[s]?AR[s]:s;
 const $=s=>document.querySelector(s), esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const ICON={phone:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>',
- wa:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.5 7.4L3 21l2.1-5.4A8.5 8.5 0 1 1 21 11.5z"/></svg>',
- mail:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 7l9 6 9-6"/></svg>',
- folder:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>',
- search:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a8a092" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>'};
-
-/* ===== storage / API ===== */
 let KEY=''; try{KEY=localStorage.getItem('sblVendKey')||''}catch(e){}
-let VENDORS=[]; const F={q:'',type:'',spec:'',city:'',status:''};
-const demoSeed=[{id:'d1',name:'Al Noor Fiber Contracting',type:'Subcontractor',specialties:'Fiber optics, Telecom',cities:'Riyadh, Qassim',contact:'Ahmed Saleh',phone:'0500000001',email:'info@example.com',rating:4,status:'worked',source:'Referral',notes:'Good splicing team, 12 technicians.'},
- {id:'d2',name:'Sun Peak Solar',type:'Subcontractor',specialties:'Solar PV',cities:'All KSA',contact:'Omar',phone:'0500000002',rating:3,status:'contacted',source:'LinkedIn'},
- {id:'d3',name:'Gulf Cranes Rental',type:'Equipment rental',specialties:'Transport',cities:'Dammam, Riyadh',contact:'Faisal',phone:'0500000003',rating:0,status:'new',source:'Exhibition'}];
+let ROWS=[], VIEW=[]; const F={q:'',type:'',status:''}; let SORT={k:'name',d:1};
+
 async function api(action,payload){
-  if(DEMO){let all=[];try{all=JSON.parse(localStorage.getItem('sblVendDemo')||'null')||demoSeed}catch(e){all=demoSeed}
+  if(DEMO){let all;try{all=JSON.parse(localStorage.getItem('sblVendDemo2')||'null')}catch(e){}
+    if(!all) all=[{id:'d1',name:'Al Noor Fiber Contracting',type:'Subcontractor',specialties:'Fiber optics',cities:'Riyadh',contact:'Ahmed',phone:'0500000001',status:'worked',rating:4,source:'Referral'},
+                  {id:'d2',name:'Sun Peak Solar',type:'Material supplier',specialties:'Solar PV',cities:'Jeddah',status:'contacted',rating:0}];
+    const keep=()=>{try{localStorage.setItem('sblVendDemo2',JSON.stringify(all))}catch(e){}};
     if(action==='list') return {ok:true,vendors:all};
-    if(action==='save'){const v=payload.vendor; if(!v.id){v.id='d'+Date.now();} const i=all.findIndex(x=>x.id===v.id); if(i<0) all.unshift(v); else all[i]=v; try{localStorage.setItem('sblVendDemo',JSON.stringify(all))}catch(e){} return {ok:true,vendor:v};}
-    if(action==='archive'){all=all.filter(x=>x.id!==payload.id); try{localStorage.setItem('sblVendDemo',JSON.stringify(all))}catch(e){} return {ok:true};}
+    if(action==='save'){const v=payload.vendor;if(!v.id)v.id='d'+Date.now();const i=all.findIndex(x=>x.id===v.id);if(i<0)all.push(v);else all[i]=v;keep();return {ok:true,vendor:v}}
+    if(action==='archive'){all=all.filter(x=>x.id!==payload.id);keep();return {ok:true}}
     if(action==='upload') return {ok:true,url:'#'};
-    return {ok:false};}
-  const body=JSON.stringify(Object.assign({app:'vendors',key:KEY,action},payload||{}));
-  const r=await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body,credentials:'omit',redirect:'follow'});
+    return {ok:false}}
+  const r=await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},
+    body:JSON.stringify(Object.assign({key:KEY,action},payload||{})),credentials:'omit',redirect:'follow'});
   return r.json();
 }
-function toast(t){const x=$('#toast');x.textContent=t;x.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>x.style.display='none',1800)}
+function setStatus(t,err){const s=$('#status');if(!s)return;s.textContent=t;s.style.color=err?'var(--notx)':'';clearTimeout(setStatus.t);if(!err&&t===T('Saved'))setStatus.t=setTimeout(()=>s.textContent='',2000)}
+function langBtns(){return `<div class="langsw"><button data-l="en" class="${LANG==='en'?'sel':''}">EN</button><button data-l="ar" class="${LANG==='ar'?'sel':''}">عربي</button></div>`}
+function bindLang(){document.querySelectorAll('.langsw button').forEach(b=>b.onclick=()=>{LANG=b.dataset.l;try{localStorage.setItem('sblLang',LANG)}catch(e){};applyLang();render()})}
+function applyLang(){document.documentElement.lang=LANG;document.documentElement.dir=LANG==='ar'?'rtl':'ltr'}
 
-/* ===== views ===== */
-function setLang(l){LANG=l;document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';try{localStorage.setItem('sblLang',l)}catch(e){};render()}
-function topbar(){return `<div class="top"><div class="lang"><button data-l="en" class="${LANG==='en'?'sel':''}">EN</button><button data-l="ar" class="${LANG==='ar'?'sel':''}">عربي</button></div>${KEY||DEMO?`<button class="iconbtn" id="lockBtn">${T('Lock')}</button>`:''}</div>`}
-function render(){
-  if(!DEMO&&!KEY) return renderLock();
-  const list=filtered();
-  $('#app').innerHTML=topbar()+`
-  <header class="head"><div class="k">${T('Smart Building Lines')}</div><h1>${T('Vendors')}</h1><div class="s">${T('SBL directory')} · ${VENDORS.length} ${T('vendors')}</div>
-    <div class="search">${ICON.search}<input id="q" placeholder="${T('Search name, person, phone…')}" value="${esc(F.q)}"></div></header>
-  ${DEMO?`<div class="count">${T('Preview mode: sample data, saved in this browser only.')}</div>`:''}
-  ${chipRow('Type','type',TYPES)}${chipRow('Specialty','spec',SPECS)}${chipRow('City','city',CITIES)}${chipRow('Status','status',STATUS.map(s=>s[0]),STATUS.map(s=>s[1]))}
-  <div class="count">${list.length} ${T('vendors')}</div>
-  <div id="list">${list.length?list.map(cardHtml).join(''):`<div class="empty">${VENDORS.length?T('No matches.'):T('No vendors yet. Tap “Add vendor”.')}</div>`}</div>
-  <button class="fab" id="add">+ ${T('Add vendor')}</button>`;
-  bindCommon();
-  $('#q').oninput=e=>{F.q=e.target.value;const l=filtered();$('#list').innerHTML=l.length?l.map(cardHtml).join(''):`<div class="empty">${T('No matches.')}</div>`;bindCards();document.querySelectorAll('.count')[DEMO?1:0].textContent=l.length+' '+T('vendors')};
-  document.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{const k=b.dataset.f;F[k]=F[k]===b.dataset.v?'':b.dataset.v;render()});
-  $('#add').onclick=()=>openEdit({});
-  bindCards();
-}
-function chipRow(label,key,vals,labels){return `<div class="flabel">${T(label)}</div><div class="chips"><button class="chip ${!F[key]?'sel':''}" data-f="${key}" data-v="">${T('All')}</button>${vals.map((v,i)=>`<button class="chip ${F[key]===v?'sel':''}" data-f="${key}" data-v="${esc(v)}">${T(labels?labels[i]:v)}</button>`).join('')}</div>`}
-function has(list,v){return (list||'').split(',').map(s=>s.trim()).includes(v)}
-function filtered(){const q=F.q.trim().toLowerCase();return VENDORS.filter(v=>(!F.type||v.type===F.type)&&(!F.spec||has(v.specialties,F.spec))&&(!F.city||has(v.cities,F.city)||has(v.cities,'All KSA'))&&(!F.status||v.status===F.status)
-  &&(!q||[v.name,v.contact,v.phone,v.email,v.specialties,v.notes].join(' ').toLowerCase().includes(q))).sort((a,b)=>(b.rating||0)-(a.rating||0)||String(a.name).localeCompare(b.name))}
-function stLabel(s){const x=STATUS.find(z=>z[0]===s);return x?T(x[1]):''}
-function stars(n){n=+n||0;return n?'★'.repeat(n)+'☆'.repeat(5-n):''}
-function cardHtml(v){const ini=(v.name||'?').trim().split(/\s+/).slice(0,2).map(w=>w[0]).join('').toUpperCase();
-  return `<div class="card" data-id="${esc(v.id)}"><div class="row1"><div class="av">${esc(ini)}</div><div><div class="n">${esc(v.name)}</div>
-  <div class="m">${esc(T(v.type||''))}${v.contact?' · '+esc(v.contact):''}</div></div>${v.status?`<span class="st ${esc(v.status)}">${stLabel(v.status)}</span>`:''}</div>
-  <div class="tags">${(v.specialties||'').split(',').filter(s=>s.trim()).map(s=>`<span class="tag">${esc(T(s.trim()))}</span>`).join('')}${(v.cities||'').split(',').filter(s=>s.trim()).map(s=>`<span class="tag">📍 ${esc(T(s.trim()))}</span>`).join('')}${v.rating?`<span class="stars">${stars(v.rating)}</span>`:''}</div></div>`}
-function bindCards(){document.querySelectorAll('.card').forEach(c=>c.onclick=()=>openView(VENDORS.find(v=>v.id===c.dataset.id)))}
-function bindCommon(){document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));const lb=$('#lockBtn');if(lb)lb.onclick=()=>{KEY='';try{localStorage.removeItem('sblVendKey')}catch(e){};VENDORS=[];render()}}
+function render(){ if(!DEMO&&!KEY) return renderLock(); renderTable(); }
 
-function renderLock(){$('#app').innerHTML=topbar()+`<div class="lock"><header class="head"><div class="k">${T('Smart Building Lines')}</div><h1>${T('Vendors')}</h1><div class="s">${T('Enter your access code')}</div></header>
-  <div class="group"><div class="row"><label>${T('Access code')}</label><input id="key" type="password" autocomplete="current-password"></div></div><div class="msg" id="km"></div><button class="btn p" id="open">${T('Open')}</button></div>`;
-  bindCommon(); $('#key').onkeydown=e=>{if(e.key==='Enter')$('#open').click()};
-  $('#open').onclick=async()=>{KEY=$('#key').value.trim();if(!KEY)return;$('#open').innerHTML='<span class="spin"></span>';
-    try{const r=await api('list');if(r.ok){try{localStorage.setItem('sblVendKey',KEY)}catch(e){}VENDORS=r.vendors||[];render()}else{KEY='';$('#km').textContent=T('Wrong code');$('#open').textContent=T('Open')}}
-    catch(e){KEY='';$('#km').textContent=T('Could not reach the server.');$('#open').textContent=T('Open')}}}
-
-function sheet(html){$('#panel').innerHTML='<div class="grab"></div>'+html;$('#sheet').classList.add('on');$('#sheet').onclick=e=>{if(e.target.id==='sheet')closeSheet()}}
-function closeSheet(){$('#sheet').classList.remove('on')}
-function digits(p){p=String(p||'').replace(/[^\d+]/g,'');if(/^05\d{8}$/.test(p))p='966'+p.slice(1);return p.replace(/^\+/,'')}
-function openView(v){if(!v)return;const ph=digits(v.phone);
-  sheet(`<div class="ptop"><button class="link" id="cl">${T('Close')}</button><h2></h2><button class="link" id="ed">${T('Edit')}</button></div>
-  <div class="card" style="cursor:default">${cardHtml(v).replace(/^<div class="card"[^>]*>/,'').replace(/<\/div>$/,'')}</div>
-  <div class="acts"><a class="act ${v.phone?'':'off'}" href="tel:${esc(v.phone)}"><div class="ic">${ICON.phone}</div>${T('Call')}</a>
-   <a class="act ${ph?'':'off'}" href="https://wa.me/${ph}" target="_blank" rel="noopener"><div class="ic">${ICON.wa}</div>${T('WhatsApp')}</a>
-   <a class="act ${v.email?'':'off'}" href="mailto:${esc(v.email)}"><div class="ic">${ICON.mail}</div>${T('Email')}</a>
-   <a class="act ${v.folder?'':'off'}" href="${esc(v.folder||'#')}" target="_blank" rel="noopener"><div class="ic">${ICON.folder}</div>${T('Folder')}</a></div>
-  <div class="group">${[['Contact person',v.contact],['Mobile',v.phone],['Email',v.email],['Website',v.website],['CR no.',v.cr],['VAT no.',v.vat],['Source',v.source],['Last contact',v.lastContact],['Notes',v.notes]]
-    .filter(r=>r[1]).map(r=>`<div class="row"><span class="lb">${T(r[0])}</span><span class="v">${esc(r[1])}</span></div>`).join('')}</div>`);
-  $('#cl').onclick=closeSheet; $('#ed').onclick=()=>openEdit(v);}
-
-function openEdit(v0){const v=Object.assign({type:'Subcontractor',status:'new',rating:0},v0);const sel={spec:new Set((v.specialties||'').split(',').map(s=>s.trim()).filter(Boolean)),city:new Set((v.cities||'').split(',').map(s=>s.trim()).filter(Boolean))};
-  const inp=(k,l,t,ph)=>`<div class="row"><label for="f_${k}">${T(l)}</label><input id="f_${k}" type="${t||'text'}" value="${esc(v[k])}" ${ph?`placeholder="${T(ph)}"`:''}></div>`;
-  sheet(`<div class="ptop"><button class="link" id="cx">${T('Cancel')}</button><h2>${T(v.id?'Edit vendor':'New vendor')}</h2><button class="link" id="sv">${T('Save')}</button></div>
-  <div class="group">${inp('name','Company')}${inp('contact','Contact person')}${inp('phone','Mobile','tel')}${inp('email','Email','email')}${inp('website','Website','url')}</div>
-  <div class="group"><div class="q"><div class="ql">${T('Type')}</div><div class="seg" id="g_type">${TYPES.map(t=>`<button data-v="${t}" class="${v.type===t?'sel':''}">${T(t)}</button>`).join('')}</div></div>
-   <div class="q"><div class="ql">${T('Specialties')}</div><div class="chips" id="g_spec">${SPECS.map(s=>`<button class="chip ${sel.spec.has(s)?'sel':''}" data-v="${s}">${T(s)}</button>`).join('')}</div></div>
-   <div class="q"><div class="ql">${T('Cities')}</div><div class="chips" id="g_city">${CITIES.map(s=>`<button class="chip ${sel.city.has(s)?'sel':''}" data-v="${s}">${T(s)}</button>`).join('')}</div></div></div>
-  <div class="group"><div class="q"><div class="ql">${T('Status')}</div><div class="seg" id="g_status">${STATUS.map(s=>`<button data-v="${s[0]}" class="${v.status===s[0]?'sel':''}">${T(s[1])}</button>`).join('')}</div></div>
-   <div class="q"><div class="ql">${T('Rating')}</div><div class="rate" id="g_rate">${[1,2,3,4,5].map(n=>`<button data-v="${n}" class="${n<=v.rating?'on':''}">★</button>`).join('')}</div></div></div>
-  <div class="group">${inp('cr','CR no.')}${inp('vat','VAT no.')}${inp('source','Source','text','e.g. exhibition, LinkedIn, referral')}${inp('lastContact','Last contact','date')}
-   <div class="row"><label for="f_notes">${T('Notes')}</label><textarea id="f_notes">${esc(v.notes)}</textarea></div></div>
-  ${v.id&&!DEMO?`<div class="group"><div class="q"><div class="ql">${T('Documents')}</div><input type="file" id="f_doc"></div></div>`:''}
-  <div class="msg" id="em"></div><button class="btn p" id="sv2">${T('Save')}</button>${v.id?`<button class="btn d" id="ar">${T('Archive vendor')}</button>`:''}`);
-  const one=(id,key)=>document.querySelectorAll('#'+id+' button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#'+id+' button').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');v[key]=b.dataset.v});
-  one('g_type','type');one('g_status','status');
-  const many=(id,set)=>document.querySelectorAll('#'+id+' button').forEach(b=>b.onclick=()=>{b.classList.toggle('sel');set.has(b.dataset.v)?set.delete(b.dataset.v):set.add(b.dataset.v)});
-  many('g_spec',sel.spec);many('g_city',sel.city);
-  document.querySelectorAll('#g_rate button').forEach(b=>b.onclick=()=>{const n=+b.dataset.v;v.rating=v.rating===n?0:n;document.querySelectorAll('#g_rate button').forEach(x=>x.classList.toggle('on',+x.dataset.v<=v.rating))});
-  $('#cx').onclick=closeSheet;
-  const save=async()=>{['name','contact','phone','email','website','cr','vat','source','lastContact','notes'].forEach(k=>v[k]=$('#f_'+k).value.trim());
-    v.specialties=[...sel.spec].join(', ');v.cities=[...sel.city].join(', ');
-    if(!v.name){$('#em').textContent=T('Company name is required.');return}
-    $('#sv2').innerHTML='<span class="spin"></span> '+T('Saving…');
-    try{const r=await api('save',{vendor:v});if(!r.ok)throw r.error;const i=VENDORS.findIndex(x=>x.id===r.vendor.id);if(i<0)VENDORS.unshift(r.vendor);else VENDORS[i]=r.vendor;
-      const f=$('#f_doc');if(f&&f.files[0]){toast(T('Uploading…'));const file=f.files[0];const b64=await new Promise(res=>{const rd=new FileReader();rd.onload=()=>res(String(rd.result).split(',')[1]);rd.readAsDataURL(file)});
-        const u=await api('upload',{id:r.vendor.id,fileName:file.name,mime:file.type||'application/octet-stream',file:b64});if(u.ok&&u.folder){r.vendor.folder=u.folder}}
-      closeSheet();toast(T('Saved'));render()}
-    catch(e){$('#em').textContent=T('Could not reach the server.');$('#sv2').textContent=T('Save')}};
-  $('#sv').onclick=save;$('#sv2').onclick=save;
-  const ar=$('#ar');if(ar)ar.onclick=async()=>{if(!window.confirm(T('Archive this vendor?')))return;const r=await api('archive',{id:v.id});if(r.ok){VENDORS=VENDORS.filter(x=>x.id!==v.id);closeSheet();toast(T('Archived'));render()}};
+function renderLock(){
+  $('#app').innerHTML=`<div class="lockwrap" style="padding:10px 12px">${langBtns()}</div><div class="lock"><h1>SBL · ${T('Vendors')}</h1><p>${T('Enter the access code')}</p>
+  <input id="key" type="password" autocomplete="current-password" placeholder="${T('Access code')}"><div class="msg" id="km"></div><button class="btn gold" id="open">${T('Open')}</button></div>`;
+  bindLang(); $('#key').onkeydown=e=>{if(e.key==='Enter')$('#open').click()}; $('#key').focus();
+  $('#open').onclick=async()=>{KEY=$('#key').value.trim();if(!KEY)return;$('#open').textContent=T('Loading…');
+    try{const r=await api('list');if(r.ok){try{localStorage.setItem('sblVendKey',KEY)}catch(e){}ROWS=r.vendors||[];render()}else{KEY='';$('#km').textContent=T('Wrong code');$('#open').textContent=T('Open')}}
+    catch(e){KEY='';$('#km').textContent=T('Could not reach the server.');$('#open').textContent=T('Open')}};
 }
 
-/* ===== start ===== */
+function statusLabel(s){const x=STATUS.find(a=>a[0]===s);return x?T(x[1]):(s||'')}
+function cellText(v,c){const k=c[0],x=v[k];
+  if(c[3]==='type') return esc(T(x||''));
+  if(c[3]==='status') return esc(statusLabel(x));
+  if(c[3]==='rating') return x>0?'★'.repeat(x):'';
+  if(k==='email'&&x) return `<a class="ln" href="mailto:${esc(x)}">${esc(x)}</a>`;
+  return esc(x||'');}
+
+function filterRows(){
+  const q=F.q.trim().toLowerCase();
+  VIEW=ROWS.filter(v=>(!F.type||v.type===F.type)&&(!F.status||v.status===F.status)&&
+    (!q||COLS.some(c=>String(v[c[0]]||'').toLowerCase().includes(q))));
+  const k=SORT.k,d=SORT.d;
+  VIEW.sort((a,b)=>{let x=a[k],y=b[k];if(k==='rating'){x=+x||0;y=+y||0;return (x-y)*d}
+    return String(x||'').localeCompare(String(y||''),LANG,{numeric:true,sensitivity:'base'})*d});
+}
+
+function renderTable(){
+  filterRows();
+  const w=44+COLS.reduce((s,c)=>s+c[2],0)+70;
+  $('#app').innerHTML=`<div class="bar"><div class="t">SBL <span>${T('Vendors')}</span></div>
+    <input type="search" id="q" placeholder="${T('Search…')}" value="${esc(F.q)}">
+    <select id="ft"><option value="">${T('All types')}</option>${TYPES.map(t=>`<option value="${t}" ${F.type===t?'selected':''}>${T(t)}</option>`).join('')}</select>
+    <select id="fs"><option value="">${T('All statuses')}</option>${STATUS.map(s=>`<option value="${s[0]}" ${F.status===s[0]?'selected':''}>${T(s[1])}</option>`).join('')}</select>
+    <button class="btn gold" id="add">${T('+ Add row')}</button><button class="btn" id="xls">${T('Export to Excel')}</button>
+    <div class="sp"></div>${langBtns()}${DEMO?'':`<button class="btn" id="lock">${T('Lock')}</button>`}</div>
+   <div class="info"><span><b id="cnt">${VIEW.length}</b> ${T('rows')}</span><span>${T('Double-click a cell to edit. Enter saves, Esc cancels.')}</span><span id="status"></span></div>
+   <div class="wrap"><table style="width:${w}px"><colgroup><col style="width:44px">${COLS.map(c=>`<col style="width:${c[2]}px">`).join('')}<col style="width:70px"></colgroup>
+   <thead><tr><th class="rn">#</th>${COLS.map(c=>`<th data-k="${c[0]}" class="${c[0]==='name'?'nm':''}">${T(c[1])}${SORT.k===c[0]?`<span class="ar">${SORT.d>0?'▲':'▼'}</span>`:''}</th>`).join('')}<th></th></tr></thead>
+   <tbody id="tb">${VIEW.length?VIEW.map(rowHtml).join(''):`<tr><td colspan="${COLS.length+2}" class="empty">${T('No rows.')}</td></tr>`}</tbody></table></div>`;
+  bindLang();
+  $('#q').oninput=e=>{F.q=e.target.value;refreshBody()};
+  $('#ft').onchange=e=>{F.type=e.target.value;refreshBody()};
+  $('#fs').onchange=e=>{F.status=e.target.value;refreshBody()};
+  $('#add').onclick=addRow; $('#xls').onclick=exportCsv;
+  if($('#lock')) $('#lock').onclick=()=>{KEY='';try{localStorage.removeItem('sblVendKey')}catch(e){};ROWS=[];render()};
+  document.querySelectorAll('th[data-k]').forEach(th=>th.onclick=()=>{const k=th.dataset.k;SORT=SORT.k===k?{k,d:-SORT.d}:{k,d:1};renderTable()});
+  bindBody();
+}
+function refreshBody(){filterRows();$('#cnt').textContent=VIEW.length;
+  $('#tb').innerHTML=VIEW.length?VIEW.map(rowHtml).join(''):`<tr><td colspan="${COLS.length+2}" class="empty">${T('No rows.')}</td></tr>`;bindBody()}
+function rowHtml(v,i){
+  return `<tr data-id="${esc(v.id||'')}" class="${v.id?'':'newrow'}"><td class="rn">${i+1}</td>${COLS.map(c=>`<td class="ed ${c[0]==='name'?'nm':''} ${c[3]==='status'?'st '+esc(v.status||''):''}" data-k="${c[0]}" title="${esc(c[3]==='status'?statusLabel(v[c[0]]):(c[3]==='type'?T(v[c[0]]||''):(v[c[0]]||'')))}">${cellText(v,c)}</td>`).join('')}
+   <td class="act">${v.folder?`<a href="${esc(v.folder)}" target="_blank" rel="noopener" title="${T('Open folder')}">📁</a>`:''}<button data-up title="${T('Upload document')}">📎</button><button data-del title="${T('Archive')}">🗑</button></td></tr>`;
+}
+function rowOf(el){const id=el.closest('tr').dataset.id;return id?ROWS.find(v=>v.id===id):ROWS.find(v=>!v.id)}
+function bindBody(){
+  document.querySelectorAll('#tb td.ed').forEach(td=>{td.ondblclick=()=>editCell(td);td.onclick=()=>{document.querySelectorAll('td.focus').forEach(x=>x.classList.remove('focus'));td.classList.add('focus')}});
+  document.querySelectorAll('#tb [data-del]').forEach(b=>b.onclick=()=>archiveRow(rowOf(b)));
+  document.querySelectorAll('#tb [data-up]').forEach(b=>b.onclick=()=>uploadFor(rowOf(b)));
+}
+function editCell(td){
+  if(td.querySelector('input,select')) return;
+  const v=rowOf(td), k=td.dataset.k, c=COLS.find(x=>x[0]===k), old=v[k]==null?'':String(v[k]);
+  let inp;
+  if(c[3]==='type'){inp=document.createElement('select');inp.innerHTML=`<option value=""></option>`+TYPES.map(t=>`<option value="${t}">${T(t)}</option>`).join('')}
+  else if(c[3]==='status'){inp=document.createElement('select');inp.innerHTML=STATUS.map(s=>`<option value="${s[0]}">${T(s[1])}</option>`).join('')}
+  else if(c[3]==='rating'){inp=document.createElement('select');inp.innerHTML=[0,1,2,3,4,5].map(n=>`<option value="${n}">${n?'★'.repeat(n):'–'}</option>`).join('')}
+  else {inp=document.createElement('input');inp.type=c[3]==='date'?'date':'text'}
+  inp.value=old; td.textContent=''; td.appendChild(inp); inp.focus(); if(inp.select&&inp.type==='text')inp.select();
+  let done=false;
+  const finish=async save=>{if(done)return;done=true;const nv=inp.value.trim();
+    if(!save||nv===old){if(!v.id&&!nv&&k==='name'){ROWS=ROWS.filter(x=>x!==v);return refreshBody()}td.innerHTML=cellText(v,c);return}
+    v[k]=c[3]==='rating'?Number(nv):nv; td.innerHTML=cellText(v,c); if(c[3]==='status') td.className='ed st '+nv;
+    await saveRow(v,td.closest('tr'));};
+  inp.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();finish(true)}else if(e.key==='Escape'){finish(false)}};
+  inp.onblur=()=>finish(true);
+  if(inp.tagName==='SELECT') inp.onchange=()=>finish(true);
+}
+async function saveRow(v,tr){
+  if(!v.name||!String(v.name).trim()){setStatus(T('Company name is required.'),true);return}
+  setStatus(T('Saving…')); if(tr) tr.classList.add('saving');
+  const wasNew=!v.id;
+  try{const r=await api('save',{vendor:Object.assign({},v)}); if(!r.ok) throw new Error(r.error||'');
+    Object.assign(v,r.vendor); setStatus(T('Saved'));
+    if(tr){tr.classList.remove('saving');if(wasNew){tr.dataset.id=v.id;tr.classList.remove('newrow')}}}
+  catch(e){setStatus(T('Could not save')+(e.message?': '+e.message:''),true);if(tr)tr.classList.remove('saving')}
+}
+function addRow(){
+  if(ROWS.some(v=>!v.id)) return;
+  F.q='';F.type='';F.status='';
+  ROWS.unshift({name:'',type:'',status:'new',rating:0}); SORT={k:'',d:1};
+  renderTable(); const td=document.querySelector('#tb tr.newrow td[data-k="name"]'); if(td) editCell(td);
+}
+async function archiveRow(v){
+  if(!v) return; if(!v.id){ROWS=ROWS.filter(x=>x!==v);return refreshBody()}
+  if(!confirm(T('Archive this row?')+'\n'+v.name)) return;
+  setStatus(T('Saving…'));
+  try{const r=await api('archive',{id:v.id});if(!r.ok)throw new Error(r.error||'');ROWS=ROWS.filter(x=>x!==v);refreshBody();setStatus(T('Archived'))}
+  catch(e){setStatus(T('Could not save'),true)}
+}
+function uploadFor(v){
+  if(!v||!v.id) return; const fi=$('#fileIn'); fi.value='';
+  fi.onchange=async()=>{const f=fi.files[0];if(!f)return;if(f.size>10*1024*1024){setStatus('Max 10 MB',true);return}
+    setStatus(T('Uploading…'));
+    const b64=await new Promise((res,rej)=>{const rd=new FileReader();rd.onload=()=>res(String(rd.result).split(',')[1]);rd.onerror=rej;rd.readAsDataURL(f)});
+    try{const r=await api('upload',{id:v.id,fileName:f.name,mime:f.type||'application/octet-stream',file:b64});if(!r.ok)throw new Error(r.error||'');
+      if(r.url){v.folder=r.url} refreshBody(); setStatus(T('Uploaded'))}
+    catch(e){setStatus(T('Could not save')+(e.message?': '+e.message:''),true)}};
+  fi.click();
+}
+function exportCsv(){
+  const head=COLS.map(c=>T(c[1])), q=s=>'"'+String(s==null?'':s).replace(/"/g,'""')+'"';
+  const lines=[head.map(q).join(',')].concat(VIEW.map(v=>COLS.map(c=>{let x=v[c[0]];if(c[3]==='type')x=T(x||'');if(c[3]==='status')x=statusLabel(x);
+    if((c[0]==='phone'||c[0]==='vat'||c[0]==='cr')&&x) x='\t'+x; return q(x)}).join(',')));
+  const blob=new Blob(['﻿'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='SBL Vendors.csv';document.body.appendChild(a);a.click();a.remove();
+}
+
 (async()=>{try{LANG=localStorage.getItem('sblLang')||(/^ar/i.test(navigator.language)?'ar':'en')}catch(e){}
-  document.documentElement.lang=LANG;document.documentElement.dir=LANG==='ar'?'rtl':'ltr';
-  if(DEMO||KEY){try{const r=await api('list');if(r.ok)VENDORS=r.vendors||[];else{KEY='';try{localStorage.removeItem('sblVendKey')}catch(e){}}}catch(e){}}
-  render()})();
+  applyLang();
+  if(DEMO||KEY){$('#app').innerHTML=`<div class="empty">${T('Loading…')}</div>`;
+    try{const r=await api('list');if(r.ok)ROWS=r.vendors||[];else{KEY='';try{localStorage.removeItem('sblVendKey')}catch(e){}}}catch(e){}}
+  render();
+})();
 </script>
 </body>
 </html>
