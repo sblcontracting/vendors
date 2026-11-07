@@ -39,6 +39,8 @@ tr:hover td.rn{background:#e3e3e3}
 td.ed{cursor:cell}
 td.focus{outline:2px solid var(--sel);outline-offset:-2px}
 td input,td select{width:100%;height:24px;border:0;outline:0;padding:0 2px;background:#fff;font:inherit}
+td[data-k=phone],td[data-k=email],td[data-k=cr],td[data-k=vat]{direction:ltr;unicode-bidi:isolate}
+html[dir=rtl] td[data-k=phone],html[dir=rtl] td[data-k=email],html[dir=rtl] td[data-k=cr],html[dir=rtl] td[data-k=vat]{text-align:right}
 td.st{text-align:center;font-weight:600;font-size:12px}
 td.st.worked{background:var(--worked);color:var(--workedtx)}
 td.st.contacted{background:var(--contacted);color:var(--contactedtx)}
